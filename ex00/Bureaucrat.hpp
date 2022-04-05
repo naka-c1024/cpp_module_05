@@ -2,6 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <string>
+#include <exception>
 
 class Bureaucrat
 {
@@ -15,6 +16,20 @@ public:
 
 	std::string	getName() const;
 	int			getGrade() const;
+
+	void	incrementGrade();
+	void	decrementGrade();
+	// Nested classes
+	class GradeTooHighException : public std::exception
+	{
+	public:
+		const char* what() const throw(); // オーバーライド
+	};
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		const char* what() const throw(); // オーバーライド
+	};
 
 private:
 	const std::string	_name;
