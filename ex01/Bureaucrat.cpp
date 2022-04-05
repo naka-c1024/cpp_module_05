@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
 }
-Bureaucrat::Bureaucrat(const Bureaucrat &other):_name(other._name) // constだからconstructor以外で変更不可
+Bureaucrat::Bureaucrat(const Bureaucrat &other)
 {
 	*this = other;
 }
