@@ -59,7 +59,6 @@ void	PresidentialPardonFormTest(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
-
 }
 
 int	main(void)
