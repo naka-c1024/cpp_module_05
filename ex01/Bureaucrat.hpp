@@ -1,8 +1,11 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include "Form.hpp"
 #include <string>
 #include <exception>
+
+class Form; // 相互参照するために前方宣言する
 
 class Bureaucrat
 {
@@ -19,6 +22,9 @@ public:
 
 	void	incrementGrade();
 	void	decrementGrade();
+
+	void	signForm(Form &form);
+
 	// Nested classes
 	class GradeTooHighException : public std::exception
 	{

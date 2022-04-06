@@ -3,7 +3,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "Bureaucrat: invalid defalt constructor called" << std::endl;
+	std::cout << "Bureaucrat: invalid defalt constructor called!!" << std::endl;
 }
 Bureaucrat::~Bureaucrat()
 {
@@ -55,6 +55,23 @@ void	Bureaucrat::decrementGrade()
 		(this->_grade)++;
 	else
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	if (form.getIsSigned() == true)
+	{
+		std::cout << this->getName() << "couldn't sign " << form.getName() << " because " << "already signed." << std::endl;
+	}
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << "couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
