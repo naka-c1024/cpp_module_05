@@ -5,21 +5,16 @@
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
 
-void	abstractClassTest(void)
-{
-	// Form	obj("hoge", 42, 42);
-}
-
 void	ShrubberyCreationFormTest(void)
 {
 	try
 	{
 		ShrubberyCreationForm	shru("home");
 		std::cout << shru << std::endl;
-		Bureaucrat	bure("NIWASHI", 137); // gradeを変えて色々試す146,145,138,137
+		Bureaucrat	bure("NIWASHI", 137);
 		std::cout << bure << std::endl;
 		bure.signForm(shru);
-		shru.execute(bure);
+		bure.executeForm(shru);
 	}
 	catch(const std::exception& e)
 	{
@@ -33,10 +28,10 @@ void	RobotomyRequestFormTest(void)
 	{
 		RobotomyRequestForm	rob("Human");
 		std::cout << rob << std::endl;
-		Bureaucrat	bure("Doctor", 45); // gradeを変えて色々試す73,72,46,45
+		Bureaucrat	bure("Doctor", 45);
 		std::cout << bure << std::endl;
 		bure.signForm(rob);
-		rob.execute(bure);
+		bure.executeForm(rob);
 	}
 	catch(const std::exception& e)
 	{
@@ -50,10 +45,10 @@ void	PresidentialPardonFormTest(void)
 	{
 		PresidentialPardonForm	pre("Criminal");
 		std::cout << pre << std::endl;
-		Bureaucrat	bure("obama", 5); // gradeを変えて色々試す26,25,6,5
+		Bureaucrat	bure("obama", 5);
 		std::cout << bure << std::endl;
 		bure.signForm(pre);
-		pre.execute(bure);
+		bure.executeForm(pre);
 	}
 	catch(const std::exception& e)
 	{
@@ -63,7 +58,6 @@ void	PresidentialPardonFormTest(void)
 
 int	main(void)
 {
-	abstractClassTest();
 	std::cout << "---- ShrubberyCreationFormTest ----" << std::endl;
 	ShrubberyCreationFormTest();
 	std::cout << std::endl;

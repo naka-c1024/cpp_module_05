@@ -14,10 +14,10 @@ void	ShrubberyCreationFormTest(void)
 	std::cout << *scf << std::endl;
 	try
 	{
-		Bureaucrat	bure("NIWASHI", 137); // gradeを変えて色々試す146,145,138,137
+		Bureaucrat	bure("NIWASHI", 137);
 		std::cout << bure << std::endl;
 		bure.signForm(*scf);
-		(*scf).execute(bure);
+		bure.executeForm(*scf);
 	}
 	catch(const std::exception& e)
 	{
@@ -34,10 +34,10 @@ void	RobotomyRequestFormTest(void)
 	std::cout << *rrf << std::endl;
 	try
 	{
-		Bureaucrat	bure("Doctor", 45); // gradeを変えて色々試す73,72,46,45
+		Bureaucrat	bure("Doctor", 45);
 		std::cout << bure << std::endl;
 		bure.signForm(*rrf);
-		(*rrf).execute(bure);
+		bure.executeForm(*rrf);
 	}
 	catch(const std::exception& e)
 	{
@@ -54,10 +54,10 @@ void	PresidentialPardonFormTest(void)
 	std::cout << *ppf << std::endl;
 	try
 	{
-		Bureaucrat	bure("obama", 5); // gradeを変えて色々試す26,25,6,5
+		Bureaucrat	bure("obama", 5);
 		std::cout << bure << std::endl;
 		bure.signForm(*ppf);
-		(*ppf).execute(bure);
+		bure.executeForm(*ppf);
 	}
 	catch(const std::exception& e)
 	{
