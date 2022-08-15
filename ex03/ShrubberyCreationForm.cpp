@@ -23,14 +23,14 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-: Form("ShrubberyCreationForm", 145, 137), _target(target)
+: Form("ShrubberyCreationForm", 145, 137), target_(target)
 {
 }
 
 void	ShrubberyCreationForm::action() const
 {
 	// treeコマンドはmacに入っていないのでアスキーアートにする
-	std::ofstream ofs(this->_target + "_shrubbery");
+	std::ofstream ofs(this->target_ + "_shrubbery");
 	if (ofs.fail())
 	{
 		std::cerr << "Failed to open file." << std::endl;

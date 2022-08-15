@@ -14,7 +14,7 @@ public:
 	PresidentialPardonForm(std::string target);
 	void	action() const;
 private:
-	std::string	_target;
+	std::string	target_;
 };
 
 #endif /* PRESIDENTIALPARDONFORM_HPP */

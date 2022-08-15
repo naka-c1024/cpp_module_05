@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
 }
-Bureaucrat::Bureaucrat(const Bureaucrat &other):_name(other._name) // constだからconstructor以外で変更不可
+Bureaucrat::Bureaucrat(const Bureaucrat &other):name_(other.name_) // constだからconstructor以外で変更不可
 {
 	*this = other;
 }
@@ -16,43 +16,43 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 	{
-		this->_grade = other.getGrade();
-		// this->_name = other.getName(); // constだからconstructor以外で変更不可
+		this->grade_ = other.getGrade();
+		// this->name_ = other.getName(); // constだからconstructor以外で変更不可
 	}
 	return *this;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade): name_(name)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	this->_grade = grade;
+	this->grade_ = grade;
 }
 
 std::string	Bureaucrat::getName() const
 {
-	return (this->_name);
+	return (this->name_);
 }
 
 int	Bureaucrat::getGrade() const
 {
-	return (this->_grade);
+	return (this->grade_);
 }
 
 void	Bureaucrat::incrementGrade()
 {
-	if (this->_grade >= 2)
-		(this->_grade)--; // 等級を上げるからグレードを下げる
+	if (this->grade_ >= 2)
+		(this->grade_)--; // 等級を上げるからグレードを下げる
 	else
 		throw Bureaucrat::GradeTooHighException();
 }
 
 void	Bureaucrat::decrementGrade()
 {
-	if (this->_grade <= 149)
-		(this->_grade)++;
+	if (this->grade_ <= 149)
+		(this->grade_)++;
 	else
 		throw Bureaucrat::GradeTooLowException();
 }

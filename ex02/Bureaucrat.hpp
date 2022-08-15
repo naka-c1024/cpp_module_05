@@ -40,8 +40,8 @@ public:
 	};
 
 private:
-	const std::string	_name;
-	int					_grade; // ranges from 1 to 150
+	const std::string	name_;
+	int					grade_; // ranges from 1 to 150
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &rhs);

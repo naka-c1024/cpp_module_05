@@ -1,14 +1,14 @@
 #include "Form.hpp"
 #include <iostream>
 
-Form::Form():_name("unknown"), _isSigned(false), _gradeRequireSign(42), _gradeRequireExecute(42)
+Form::Form():name_("unknown"), isSigned_(false), gradeRequireSign_(42), gradeRequireExecute_(42)
 {
 	std::cout << "Form: Invalid defalt constructor called!!" << std::endl;
 }
 Form::~Form()
 {
 }
-Form::Form(const Form &other): _name(other._name), _gradeRequireSign(other._gradeRequireSign), _gradeRequireExecute(other._gradeRequireExecute)
+Form::Form(const Form &other): name_(other.name_), gradeRequireSign_(other.gradeRequireSign_), gradeRequireExecute_(other.gradeRequireExecute_)
 {
 	*this = other;
 }
@@ -16,32 +16,32 @@ Form &Form::operator=(const Form &other)
 {
 	if (this != &other)
 	{
-		this->_isSigned = other._isSigned;
+		this->isSigned_ = other.isSigned_;
 	}
 	return *this;
 }
 
 std::string	Form::getName() const
 {
-	return (this->_name);
+	return (this->name_);
 }
 bool	Form::getIsSigned() const
 {
-	return (this->_isSigned);
+	return (this->isSigned_);
 }
 int		Form::getGradeRequireSign() const
 {
-	return (this->_gradeRequireSign);
+	return (this->gradeRequireSign_);
 }
 int		Form::getGradeRequireExecute() const
 {
-	return (this->_gradeRequireExecute);
+	return (this->gradeRequireExecute_);
 }
 
 Form::Form(std::string name, int gradeRequireSign, int gradeRequireExecute)
-:_name(name), _gradeRequireSign(gradeRequireSign), _gradeRequireExecute(gradeRequireExecute)
+:name_(name), gradeRequireSign_(gradeRequireSign), gradeRequireExecute_(gradeRequireExecute)
 {
-	_isSigned = false;
+	isSigned_ = false;
 	if (gradeRequireSign < 1 || gradeRequireExecute < 1)
 	{
 		throw Form::GradeTooHighException("This grade is too HIGH above the grade range.");
@@ -58,7 +58,7 @@ void	Form::beSigned(Bureaucrat bureaucrat)
 	{
 		throw Form::GradeTooLowException("this bureaucrat's grade is NOT high enough.");
 	}
-	this->_isSigned = true;
+	this->isSigned_ = true;
 }
 
 Form::GradeTooHighException::GradeTooHighException(const std::string err_msg): std::out_of_range(err_msg) {}

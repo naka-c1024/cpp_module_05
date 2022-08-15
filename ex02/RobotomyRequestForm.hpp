@@ -14,7 +14,7 @@ public:
 	RobotomyRequestForm(std::string target);
 	void	action() const;
 private:
-	std::string	_target;
+	std::string	target_;
 };
 
 #endif /* ROBOTOMYREQUESTFORM_HPP */

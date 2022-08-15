@@ -24,7 +24,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-: Form("RobotomyRequestForm", 72, 45), _target(target)
+: Form("RobotomyRequestForm", 72, 45), target_(target)
 {
 }
 
@@ -34,7 +34,7 @@ void	RobotomyRequestForm::action() const
 	std::srand(time(nullptr));
 	int	random_num = rand();
 	if (random_num % 2 == 0)
-		std::cout << this->_target << " has been robotomized successfully!" << std::endl;
+		std::cout << this->target_ << " has been robotomized successfully!" << std::endl;
 	else
-		std::cout << "the robotomy of " << this->_target << " failed..." << std::endl;
+		std::cout << "the robotomy of " << this->target_ << " failed..." << std::endl;
 }

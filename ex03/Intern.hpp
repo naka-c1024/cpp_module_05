@@ -17,7 +17,7 @@ public:
 
 	Form	*makeForm(std::string form_name, std::string target);
 private:
-	std::string	arr[4];
+	std::string	arr_[4];
 };
 
 #endif /* INTERN_HPP */

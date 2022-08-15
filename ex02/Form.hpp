@@ -40,10 +40,10 @@ public:
 	};
 
 private:
-	const std::string	_name;
-	bool				_isSigned;
-	const int	_gradeRequireSign; // ranges from 1 to 150
-	const int	_gradeRequireExecute; // ranges from 1 to 150
+	const std::string	name_;
+	bool				isSigned_;
+	const int	gradeRequireSign_; // ranges from 1 to 150
+	const int	gradeRequireExecute_; // ranges from 1 to 150
 };
 
 std::ostream &operator<<(std::ostream &out, const Form &rhs);

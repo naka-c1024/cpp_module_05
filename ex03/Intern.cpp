@@ -3,10 +3,10 @@
 
 Intern::Intern()
 {
-	this->arr[0] = "robotomy request";
-	this->arr[1] = "presidential request";
-	this->arr[2] = "shrubbery request";
-	this->arr[3] = "something else";
+	this->arr_[0] = "robotomy request";
+	this->arr_[1] = "presidential request";
+	this->arr_[2] = "shrubbery request";
+	this->arr_[3] = "something else";
 }
 Intern::~Intern()
 {
@@ -26,7 +26,7 @@ Intern &Intern::operator=(const Intern &other)
 Form	*Intern::makeForm(std::string form_name, std::string target)
 {
 	std::size_t	i = 0;
-	while (form_name != this->arr[i] && i < 3)
+	while (form_name != this->arr_[i] && i < 3)
 		i++;
 
 	switch (i)
