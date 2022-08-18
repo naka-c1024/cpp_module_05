@@ -29,7 +29,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 
 void	ShrubberyCreationForm::action() const
 {
-	// treeコマンドはmacに入っていないのでアスキーアートにする
 	std::ofstream ofs(this->target_ + "_shrubbery");
 	if (ofs.fail())
 	{

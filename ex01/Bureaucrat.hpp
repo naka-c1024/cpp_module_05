@@ -5,7 +5,7 @@
 #include <string>
 #include <exception>
 
-class Form; // 相互参照するために前方宣言する
+class Form; // 相互参照するための前方宣言
 
 class Bureaucrat
 {
@@ -29,12 +29,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		const char* what() const throw(); // オーバーライド
+		const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		const char* what() const throw(); // オーバーライド
+		const char* what() const throw();
 	};
 
 private:

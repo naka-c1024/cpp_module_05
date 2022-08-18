@@ -5,7 +5,7 @@
 #include <string>
 #include <exception>
 
-class Bureaucrat; // 相互参照するために前方宣言する
+class Bureaucrat; // 相互参照するための前方宣言
 
 class Form
 {

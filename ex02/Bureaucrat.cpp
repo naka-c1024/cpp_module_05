@@ -8,7 +8,7 @@ Bureaucrat::Bureaucrat()
 Bureaucrat::~Bureaucrat()
 {
 }
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
+Bureaucrat::Bureaucrat(const Bureaucrat &other):name_(other.name_)
 {
 	*this = other;
 }
@@ -17,7 +17,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 	if (this != &other)
 	{
 		this->grade_ = other.getGrade();
-		// this->name_ = other.getName(); // constだからconstructor以外で変更不可
 	}
 	return *this;
 }
@@ -44,7 +43,7 @@ int	Bureaucrat::getGrade() const
 void	Bureaucrat::incrementGrade()
 {
 	if (this->grade_ >= 2)
-		(this->grade_)--; // 等級を上げるからグレードを下げる
+		(this->grade_)--;
 	else
 		throw Bureaucrat::GradeTooHighException();
 }
