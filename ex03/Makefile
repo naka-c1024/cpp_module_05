@@ -20,11 +20,11 @@ SRCS	:=	main.cpp\
 			ShrubberyCreationForm.cpp\
 			Intern.cpp
 OBJS	:=	$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
-
 DEPS	:=	${OBJS:%.o=%.d}
--include ${DEPS}
 
 all		: $(NAME)
+
+-include ${DEPS}
 
 $(NAME)	: $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)

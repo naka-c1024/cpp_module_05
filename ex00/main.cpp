@@ -8,7 +8,7 @@ int	main(void)
 		Bureaucrat obj("decrement_test", 42);
 		std::cout << "before: " << obj << std::endl;
 		obj.decrementGrade();
-		std::cout << "after" << obj << std::endl;
+		std::cout << "after: " << obj << std::endl;
 	}
 	catch(std::exception & e)
 	{
@@ -18,9 +18,9 @@ int	main(void)
 	try
 	{
 		Bureaucrat obj("increment_test", 42);
-		std::cout << "before" << obj << std::endl;
+		std::cout << "before: " << obj << std::endl;
 		obj.incrementGrade();
-		std::cout << "after" << obj << std::endl;
+		std::cout << "after: " << obj << std::endl;
 	}
 	catch(std::exception & e)
 	{

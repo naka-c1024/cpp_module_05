@@ -7,7 +7,7 @@ void	normal_test(void)
 	std::cout << "---- normal test ----" << std::endl;
 	try
 	{
-		Form obj("normal_test", 42, 42);
+		Form obj("normal_test", 42, 24);
 		std::cout << obj << std::endl;
 	}
 	catch(std::exception & e)
@@ -63,11 +63,9 @@ void	signForm_and_beSigned_test(void)
 	{
 		Bureaucrat	bure("Tarou", 42);
 		std::cout << bure << std::endl;
-		Form		form("paper", 40, 100);
+		Form		form("paper", 40, 10);
 		std::cout << form << std::endl;
 		form.beSigned(bure);
-		bure.incrementGrade();
-		bure.incrementGrade();
 		std::cout << bure << std::endl;
 	}
 	catch(std::exception & e)
@@ -79,7 +77,7 @@ void	signForm_and_beSigned_test(void)
 	{
 		Bureaucrat	bure("Tarou", 42);
 		std::cout << bure << std::endl;
-		Form		form("paper", 40, 100);
+		Form		form("paper", 40, 10);
 		std::cout << form << std::endl;
 		bure.incrementGrade();
 		bure.incrementGrade();

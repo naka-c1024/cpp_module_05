@@ -64,10 +64,7 @@ void	Form::beSigned(Bureaucrat bureaucrat)
 void	Form::execute(Bureaucrat const & executor) const
 {
 	if (this->getIsSigned() == false)
-	{
-		std::cout << "This form is NOT signed." << std::endl;
-		return ;
-	}
+		throw std::runtime_error("This form is NOT signed.");
 	if (executor.getGrade() > this->getGradeRequireExecute())
 		throw Form::GradeTooLowException("This grade of the bureaucrat attempting to execute the form is LOW.");
 	this->action();
