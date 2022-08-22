@@ -18,7 +18,7 @@ void	normal_test(void)
 
 void	exception_constructor_test(void)
 {
-	std::cout << "---- exception constructor test" << std::endl;
+	std::cout << "---- exception constructor test ----" << std::endl;
 	try
 	{
 		Form obj("gradeRequireSign_high", -100, 42);
